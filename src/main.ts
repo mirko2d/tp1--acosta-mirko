@@ -47,31 +47,38 @@ console.log(`Barcelona válido para fútbol: ${futbol.validar(barcelona)}`); // 
 console.log(`Lakers válido para básquet: ${basquet.validar(lakers)}\n`); // true
 
 try {
-    console.log('=== PROGRAMANDO PARTIDOS ===');
-    const partidoFutbol = torneo.programarPartido('p1', barcelona, river, futbol);
-    const partidoBasquet = torneo.programarPartido('p2', lakers, warriors, basquet);
-    console.log('Partidos programados exitosamente\n');
+    console.log('=== REGISTRANDO PARTIDOS ===');
+    // Usamos el nuevo nombre del método: registrarPartido
+    torneo.registrarPartido('p1', barcelona, river, futbol);
+    torneo.registrarPartido('p2', lakers, warriors, basquet);
+    console.log('Partidos registrados exitosamente\n');
 
     try {
-        torneo.programarPartido('p1', barcelona, lakers, futbol);
+        // La validación de ID duplicado ahora también está en registrarPartido
+        torneo.registrarPartido('p1', barcelona, lakers, futbol);
     } catch (error) {
-        console.log('Error esperado al programar partido con ID duplicado:', 
-                   error instanceof Error ? error.message : String(error));
+        console.log('Error esperado al registrar partido con ID duplicado:', 
+                    error instanceof Error ? error.message : String(error));
     }
 
-    console.log('\n=== JUGANDO PARTIDOS ===');
-    partidoFutbol.jugar(2, 1);
-    partidoBasquet.jugar(98, 102);
-    console.log('Partidos jugados exitosamente\n');
+    console.log('\n=== REGISTRANDO RESULTADOS ===');
+    // Usamos el nuevo método registrarResultado del Torneo
+    torneo.registrarResultado('p1', 2, 1);
+    torneo.registrarResultado('p2', 98, 102);
+    console.log('Resultados registrados exitosamente\n');
 
     console.log('=== RESULTADOS ===');
-    console.log(partidoFutbol.toString());
-    console.log(partidoBasquet.toString() + '\n');
+    // Obtenemos los partidos para mostrar los resultados
+    const partidoFutbol = torneo.obtenerPartidoPorId('p1');
+    const partidoBasquet = torneo.obtenerPartidoPorId('p2');
+    console.log(partidoFutbol?.toString());
+    console.log(partidoBasquet?.toString() + '\n');
 
     console.log('=== LISTA DE PARTIDOS ===');
-    console.log(torneo.listarPartidos().join('\n') + '\n');
+    // Usamos el nuevo nombre del método: obtenerResumenPartidos
+    console.log(torneo.obtenerResumenPartidos().join('\n') + '\n');
 
-    const partidoEncontrado = torneo.buscarPartido('p1');
+    const partidoEncontrado = torneo.obtenerPartidoPorId('p1');
     console.log('=== BUSCAR PARTIDO ===');
     console.log(partidoEncontrado?.toString() + '\n');
 
