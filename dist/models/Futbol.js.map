@@ -1,0 +1,1 @@
+{"version":3,"file":"Futbol.js","sourceRoot":"","sources":["../../src/models/Futbol.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,OAAO,EAAE,MAAM,cAAc,CAAC;AAGvC,MAAM,OAAO,MAAO,SAAQ,OAAO;IAC/B;QACI,KAAK,CAAC,QAAQ,EAAE,EAAE,CAAC,CAAC;IACxB,CAAC;IAED,OAAO,CAAC,MAAc;QAClB,OAAO,MAAM,CAAC,QAAQ,KAAK,IAAI,CAAC,YAAY,CAAC;IACjD,CAAC;CACJ"}

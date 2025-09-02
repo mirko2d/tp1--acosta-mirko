@@ -1,0 +1,25 @@
+{
+  "name": "itorneo",
+  "version": "1.0.0",
+  "description": "Modelar un torneo con equipos, jugadores, deportes y partidos aplicando clases, interfaces, herencia, encapsulamiento, polimorfismo y clases abstractas en TypeScript.",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node src/main.ts",
+    "build": "tsc",
+    "dev": "ts-node src/main.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "typescript",
+    "poo",
+    "torneo"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.19.11",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  }
+}
